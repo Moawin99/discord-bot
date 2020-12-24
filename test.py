@@ -30,5 +30,12 @@ async def tails(ctx, bet: int):
         await ctx.send('You Lost ${}'.format(bet))
 
 
-    
+@bot.command()
+async def getName(ctx):
+    theList = []
+    for members in ctx.guild.members:
+        theList.append(members.name)
+    await ctx.send(theList)
+
+
 bot.run('Nzg5NTI4MzQzMTEyMTg3OTI0.X9zXkQ.OhKWXomXABoVqLgcFM51CgXaIgY')
