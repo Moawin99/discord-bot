@@ -29,13 +29,14 @@ async def tails(ctx, bet: int):
     else:
         await ctx.send('You Lost ${}'.format(bet))
 
+@bot.command()
+async def slap(ctx, member: discord.Member, *, reason):
+    await ctx.send('You slapped {} for {}'.format(member.display_name, reason))
 
 @bot.command()
-async def getName(ctx):
-    theList = []
-    for members in ctx.guild.members:
-        theList.append(members.name)
-    await ctx.send(theList)
-
+async def mem(ctx):
+    list = await ctx.guild.fetch_members().flatten()
+    for members in list:
+        ctx.send(members)
 
 bot.run('Nzg5NTI4MzQzMTEyMTg3OTI0.X9zXkQ.OhKWXomXABoVqLgcFM51CgXaIgY')
