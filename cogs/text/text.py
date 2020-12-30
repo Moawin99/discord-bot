@@ -7,7 +7,7 @@ class Text(commands.Cog):
 
     @commands.command(brief="--Slaps member for reason specified by user")
     async def slap(self, ctx, member: discord.Member, *, reason):
-        await ctx.send('You slapped {} for {}'.format(member.display_name, reason))
+        await ctx.send('You slapped {} for {}'.format(member.mention, reason))
 
 def setup(bot):
     bot.add_cog(Text(bot))
