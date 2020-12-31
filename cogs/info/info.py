@@ -35,7 +35,7 @@ class Info(commands.Cog):
     async def get_mem(self, ctx):
         list = []
         for member in ctx.guild.members:
-           list.append(member)
+           list.append(member.display_name)
         await ctx.send(list)
 
     
