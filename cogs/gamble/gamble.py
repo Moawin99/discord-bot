@@ -1,20 +1,16 @@
 from discord.ext import commands
 import random
 import discord
-from Bank.bankbag import BankBag
 from Bank.bank import Economy
 from typing import Optional
 
 class Gamble(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.bag = BankBag()
 
     @commands.command(brief='--begins gambinling for server')
     async def gamble(self, ctx):
-        for member in ctx.guild.members:
-            bag.add(Economy(member))
-        ctx.send('All members have 5000 coins to bet, let the Gambling Begin!')
+        await ctx.send('Gaminbling is still a work in progress')
 
        
     @commands.command(brief="--flips coin. If heads then double your bet")
@@ -38,8 +34,12 @@ class Gamble(commands.Cog):
         member = member or ctx.author
         earnings = list[list.index(member.id)]
         await ctx.send('{} has ${}'.format(member.mention, earnings.money))
-        
 
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, ex):
+        print(ex)
+        await ctx.send('Nah you did something wrong. Type $help for the list of commands')
+        
 
 def setup(bot):
     bot.add_cog(Gamble(bot))
