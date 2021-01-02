@@ -1,7 +1,6 @@
 from discord.ext import commands
 import random
 import discord
-from Bank.bank import Economy
 from typing import Optional
 
 class Gamble(commands.Cog):
@@ -28,12 +27,6 @@ class Gamble(commands.Cog):
             await ctx.send('You WON ${}!'.format(bet*2))
         else:
             await ctx.send('You Lost ${}'.format(bet))
-
-    @commands.command(brief="--Checkes mentioned user's earnings")
-    async def amount(self, ctx, member:Optional[discord.Member]):
-        member = member or ctx.author
-        earnings = list[list.index(member.id)]
-        await ctx.send('{} has ${}'.format(member.mention, earnings.money))
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, ex):
