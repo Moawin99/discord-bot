@@ -7,6 +7,7 @@ from typing import Optional
 class Gamble(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.list = None
 
     @commands.command(brief='--begins gambinling for server')
     async def gamble(self, ctx):
