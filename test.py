@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+from settings.settings import DISCORD_TOKEN
 
 intents = discord.Intents.default()
 intents.members = True
@@ -17,4 +18,5 @@ bot.load_extension('cogs.gamble.gamble')
 bot.load_extension('cogs.text.text')
 bot.load_extension('cogs.info.info')
 
-bot.run('Nzg5NTI4MzQzMTEyMTg3OTI0.X9zXkQ.OhKWXomXABoVqLgcFM51CgXaIgY')
+
+bot.run(DISCORD_TOKEN)
