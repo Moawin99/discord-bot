@@ -6,12 +6,6 @@ from typing import Optional
 class Gamble(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.list = None
-
-    @commands.command(brief='--begins gambinling for server')
-    async def gamble(self, ctx):
-        await ctx.send('Gaminbling is still a work in progress')
-
        
     @commands.command(brief="--flips coin. If heads then double your bet")
     async def heads(self, ctx, bet:int):
