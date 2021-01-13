@@ -17,6 +17,7 @@ async def on_ready():
 bot.load_extension('cogs.gamble.gamble')
 bot.load_extension('cogs.text.text')
 bot.load_extension('cogs.info.info')
+bot.load_extension('cogs.games.games')
 
 
 bot.run(DISCORD_TOKEN)
