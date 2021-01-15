@@ -7,7 +7,7 @@ class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(brief="starts a game of RPS")
+    @commands.command(usage = "rock | paper | scissor")
     async def rps(self, ctx, user_choice: RpsConverter):
         rps = RPS()
         bot_choice = random.choice(rps.get_choices())

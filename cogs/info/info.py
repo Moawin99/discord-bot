@@ -38,6 +38,7 @@ class Info(commands.Cog):
            list.append(member.display_name)
         await ctx.send(list)
 
+   
     
 
 def setup(bot):
