@@ -11,10 +11,6 @@ class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(brief="--gets number of members in server")
-    async def mem(self, ctx):
-        await ctx.send(ctx.guild.member_count)
-
     @commands.command(name="userinfo", aliases=["ui", "mi"], brief="--displays userInfo")
     async def user_info(self, ctx, member:Optional[discord.Member]):
         member = member or ctx.author
@@ -30,13 +26,6 @@ class Info(commands.Cog):
         for name, value, inline in fields:
             embed.add_field(name=name, value=value, inline=inline)
         await ctx.send(embed=embed)
-
-    @commands.command(name="members",brief="--gets names of all members in server")
-    async def get_mem(self, ctx):
-        list = []
-        for member in ctx.guild.members:
-           list.append(member.display_name)
-        await ctx.send(list)
 
    
     

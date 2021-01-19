@@ -15,7 +15,7 @@ class Gamble(commands.Cog):
         else:
             await ctx.send('You Lost ${}'.format(bet))
 
-    @commands.command(brief="--flips coin. If heads then double your bet")
+    @commands.command(brief="--flips coin. If tails then double your bet")
     async def tails(self, ctx, bet: int):
         flip = random.randint(0,1)
         if (flip == 1):
