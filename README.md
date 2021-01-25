@@ -1,1 +1,1 @@
-# Hangman-Bot
+#Discord Bot
